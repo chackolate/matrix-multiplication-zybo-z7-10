@@ -1,7 +1,5 @@
 *
-!*/
-!*.vhd
-!*.xdc
-!*.wfcg
+!/*
+!/matrixMult/matrixMult.srcs/*
 !*.xpr
-!*.bd
+!*.wcfg

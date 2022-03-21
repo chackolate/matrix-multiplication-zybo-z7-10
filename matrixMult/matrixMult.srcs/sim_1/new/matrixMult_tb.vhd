@@ -62,8 +62,9 @@ architecture Behavioral of matrixMult_tb is
 		);
 	end component;
 
-	signal D0, D1       : matrix_type := (others => (others => X"32"));
-	signal Q0, Q1       : matrix_type := (others => (others => X"00"));
+	signal D_a          : unsigned (3 downto 0) := X"3"; --LFSR seeds
+	signal D_b          : unsigned (3 downto 0) := X"1";
+	signal Q_a, Q_b     : unsigned (3 downto 0) := X"0"; --LFSR output
 	signal reload, en   : std_logic;
 	constant clk_period : time := 8 ns;
 
@@ -79,33 +80,25 @@ begin
 		done  => done
 	);
 
-	GEN_LFSR_A : for I in 0 to 2 generate
-		GEN_LFSR_INST_A : for J in 0 to 2 generate
-			LFSR_X : LFSR4
-			generic map(width => 8)
-			port map(
-				clock  => clk,
-				reload => reload,
-				D      => D0(I)(J),
-				en     => en,
-				Q      => Q0(I)(J)
-			);
-		end generate;
-	end generate;
+	LFSR0 : LFSR4
+	generic map(width => 4)
+	port map(
+		clock  => clk,
+		reload => reload,
+		D      => D_a,
+		en     => en,
+		Q      => Q_a
+	);
 
-	GEN_LFSR_B : for I in 0 to 2 generate
-		GEN_LFSR_INST_B : for J in 0 to 2 generate
-			LFSR_X : LFSR4
-			generic map(width => 8)
-			port map(
-				clock  => clk,
-				reload => reload,
-				D      => D1(I)(J),
-				en     => en,
-				Q      => Q1(I)(J)
-			);
-		end generate;
-	end generate;
+	LFSR1 : LFSR4
+	generic map(width => 4)
+	port map(
+		clock  => clk,
+		reload => reload,
+		D      => D_b,
+		en     => en,
+		Q      => Q_b
+	);
 
 	clocking : process
 	begin
@@ -125,11 +118,18 @@ begin
 		reset  <= '0';
 		en     <= '1';
 		wait for clk_period * 8;
+		for i in 0 to 2 loop
+			for j in 0 to 2 loop
+				A(i)(j)(3 downto 0) <= Q_a;
+				A(i)(j)(7 downto 4) <= "0000";
+				B(i)(j)(3 downto 0) <= Q_b;
+				B(i)(j)(7 downto 4) <= "0000";
+				wait for clk_period;
+			end loop;
+		end loop;
 		en    <= '0';
-		start <= '1';
 		reset <= '0';
-		A     <= Q0;
-		B     <= Q1;
+		start <= '1';
 		wait;
 	end process;
 
