@@ -1,5 +1,5 @@
-*
-!/*
-!/matrixMult/matrixMult.srcs/*
+iprepo/
+matrixMult/**/*
+!matrixMult/matrixMult.srcs/*
 !*.xpr
 !*.wcfg
