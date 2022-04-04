@@ -1,5 +1,8 @@
-iprepo/
-matrixMult/**/*
-!matrixMult/matrixMult.srcs/*
-!*.xpr
+*
+!*/
+!*.vhd
+!*.xdc
 !*.wcfg
+!*.xpr
+!*.bd
+matrixMult/matrixMult.runs/synth_1/dont_touch.xdc
