@@ -11,8 +11,16 @@ use IEEE.NUMERIC_STD.all;
 --use UNISIM.VComponents.all;
 
 package matrixPkg is
-	type row_type is array(0 to 2) of unsigned(7 downto 0);
-	type matrix_type is array(0 to 2) of row_type;
-	type row_std_logic is array(0 to 2) of std_logic_vector(7 downto 0);
-	type matrix_std_logic is array(0 to 2) of row_std_logic;
+	type row_type is array(0 to 1) of unsigned(7 downto 0);
+	type matrix_type is array(0 to 1) of row_type;
+
+	type row_type_16 is array(0 to 1) of unsigned(15 downto 0);
+	type matrix_type_16 is array(0 to 1) of row_type_16;
+
+	type matrix_row is array(0 to 3) of matrix_type;
+	type matrix_row_16 is array(0 to 3) of matrix_type_16;
+
+	type matrix_array is array(0 to 3) of matrix_row;
+	type matrix_array_16 is array(0 to 3) of matrix_row_16;
+
 end package;

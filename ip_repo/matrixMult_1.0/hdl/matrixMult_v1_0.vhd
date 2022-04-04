@@ -2,6 +2,9 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+library work;
+use work.matrixPkg.all;
+
 entity matrixMult_v1_0 is
 	generic (
 		-- Users to add parameters here
@@ -12,12 +15,10 @@ entity matrixMult_v1_0 is
 
 		-- Parameters of Axi Slave Bus Interface S00_AXI
 		C_S00_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S00_AXI_ADDR_WIDTH	: integer	:= 6
+		C_S00_AXI_ADDR_WIDTH	: integer	:= 5
 	);
 	port (
 		-- Users to add ports here
-        C : out std_logic_vector(71 downto 0);
-        done : out std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -53,11 +54,9 @@ architecture arch_imp of matrixMult_v1_0 is
 	component matrixMult_v1_0_S00_AXI is
 		generic (
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S_AXI_ADDR_WIDTH	: integer	:= 6
+		C_S_AXI_ADDR_WIDTH	: integer	:= 5
 		);
 		port (
-		C : out std_logic_vector(71 downto 0);
-        done : out std_logic;
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
 		S_AXI_AWADDR	: in std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -91,8 +90,6 @@ matrixMult_v1_0_S00_AXI_inst : matrixMult_v1_0_S00_AXI
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
 	)
 	port map (
-	   C => C,
-	   done => done,
 		S_AXI_ACLK	=> s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,
 		S_AXI_AWADDR	=> s00_axi_awaddr,
@@ -117,7 +114,7 @@ matrixMult_v1_0_S00_AXI_inst : matrixMult_v1_0_S00_AXI
 	);
 
 	-- Add user logic here
-    
+
 	-- User logic ends
 
 end arch_imp;

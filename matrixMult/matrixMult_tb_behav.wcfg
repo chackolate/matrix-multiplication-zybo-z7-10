@@ -5,22 +5,26 @@
    <db_ref_list>
       <db_ref path="matrixMult_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="glbl" />
             <top_module name="matrixMult_tb" />
             <top_module name="matrixpkg" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="106.540 ns"></ZoomStartTime>
-      <ZoomEndTime time="292.241 ns"></ZoomEndTime>
-      <Cursor1Time time="158.540 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,476.916 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="276"></NameColumnWidth>
-      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+      <ValueColumnWidth column_width="96"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="28" />
+   <WVObjectSize size="17" />
+   <wave_markers>
+      <marker time="130000" label="" />
+      <marker time="135000" label="" />
+      <marker time="155000" label="" />
+   </wave_markers>
    <wvobject fp_name="/matrixMult_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -37,36 +41,46 @@
       <obj_property name="ElementShortName">done</obj_property>
       <obj_property name="ObjectShortName">done</obj_property>
    </wvobject>
+   <wvobject fp_name="/matrixMult_tb/A0" type="array">
+      <obj_property name="ElementShortName">A0[127:0]</obj_property>
+      <obj_property name="ObjectShortName">A0[127:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="/matrixMult_tb/A" type="array">
-      <obj_property name="ElementShortName">A[0:2][0:2][7:0]</obj_property>
-      <obj_property name="ObjectShortName">A[0:2][0:2][7:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+      <obj_property name="ElementShortName">A[0:3][0:3][0:1][0:1][7:0]</obj_property>
+      <obj_property name="ObjectShortName">A[0:3][0:3][0:1][0:1][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/matrixMult_tb/B0" type="array">
+      <obj_property name="ElementShortName">B0[127:0]</obj_property>
+      <obj_property name="ObjectShortName">B0[127:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/matrixMult_tb/B" type="array">
-      <obj_property name="ElementShortName">B[0:2][0:2][7:0]</obj_property>
-      <obj_property name="ObjectShortName">B[0:2][0:2][7:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+      <obj_property name="ElementShortName">B[0:3][0:3][0:1][0:1][7:0]</obj_property>
+      <obj_property name="ObjectShortName">B[0:3][0:3][0:1][0:1][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/matrixMult_tb/C0" type="array">
+      <obj_property name="ElementShortName">C0[255:0]</obj_property>
+      <obj_property name="ObjectShortName">C0[255:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/matrixMult_tb/C" type="array">
-      <obj_property name="ElementShortName">C[0:2][0:2][7:0]</obj_property>
-      <obj_property name="ObjectShortName">C[0:2][0:2][7:0]</obj_property>
+      <obj_property name="ElementShortName">C[0:3][0:3][0:1][0:1][15:0]</obj_property>
+      <obj_property name="ObjectShortName">C[0:3][0:3][0:1][0:1][15:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/matrixMult_tb/D_a" type="array">
-      <obj_property name="ElementShortName">D_a[3:0]</obj_property>
-      <obj_property name="ObjectShortName">D_a[3:0]</obj_property>
+      <obj_property name="ElementShortName">D_a[0:3][31:0]</obj_property>
+      <obj_property name="ObjectShortName">D_a[0:3][31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/matrixMult_tb/D_b" type="array">
-      <obj_property name="ElementShortName">D_b[3:0]</obj_property>
-      <obj_property name="ObjectShortName">D_b[3:0]</obj_property>
+      <obj_property name="ElementShortName">D_b[0:3][31:0]</obj_property>
+      <obj_property name="ObjectShortName">D_b[0:3][31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/matrixMult_tb/Q_a" type="array">
-      <obj_property name="ElementShortName">Q_a[3:0]</obj_property>
-      <obj_property name="ObjectShortName">Q_a[3:0]</obj_property>
+      <obj_property name="ElementShortName">Q_a[0:3][31:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_a[0:3][31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/matrixMult_tb/Q_b" type="array">
-      <obj_property name="ElementShortName">Q_b[3:0]</obj_property>
-      <obj_property name="ObjectShortName">Q_b[3:0]</obj_property>
+      <obj_property name="ElementShortName">Q_b[0:3][31:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_b[0:3][31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/matrixMult_tb/reload" type="logic">
       <obj_property name="ElementShortName">reload</obj_property>
@@ -79,85 +93,5 @@
    <wvobject fp_name="/matrixMult_tb/clk_period" type="other">
       <obj_property name="ElementShortName">clk_period</obj_property>
       <obj_property name="ObjectShortName">clk_period</obj_property>
-   </wvobject>
-   <wvobject fp_name="/matrixMult_tb/MM0/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/matrixMult_tb/MM0/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
-   <wvobject fp_name="/matrixMult_tb/MM0/start" type="logic">
-      <obj_property name="ElementShortName">start</obj_property>
-      <obj_property name="ObjectShortName">start</obj_property>
-   </wvobject>
-   <wvobject fp_name="/matrixMult_tb/MM0/A" type="array">
-      <obj_property name="ElementShortName">A[0:2][0:2][7:0]</obj_property>
-      <obj_property name="ObjectShortName">A[0:2][0:2][7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/matrixMult_tb/MM0/B" type="array">
-      <obj_property name="ElementShortName">B[0:2][0:2][7:0]</obj_property>
-      <obj_property name="ObjectShortName">B[0:2][0:2][7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/matrixMult_tb/MM0/C" type="array">
-      <obj_property name="ElementShortName">C[0:2][0:2][7:0]</obj_property>
-      <obj_property name="ObjectShortName">C[0:2][0:2][7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/matrixMult_tb/MM0/done" type="logic">
-      <obj_property name="ElementShortName">done</obj_property>
-      <obj_property name="ObjectShortName">done</obj_property>
-   </wvobject>
-   <wvobject fp_name="/matrixMult_tb/MM0/m_A" type="array">
-      <obj_property name="ElementShortName">m_A[0:2][0:2][7:0]</obj_property>
-      <obj_property name="ObjectShortName">m_A[0:2][0:2][7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/matrixMult_tb/MM0/m_B" type="array">
-      <obj_property name="ElementShortName">m_B[0:2][0:2][7:0]</obj_property>
-      <obj_property name="ObjectShortName">m_B[0:2][0:2][7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/matrixMult_tb/MM0/m_C" type="array">
-      <obj_property name="ElementShortName">m_C[0:2][0:2][7:0]</obj_property>
-      <obj_property name="ObjectShortName">m_C[0:2][0:2][7:0]</obj_property>
-      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/matrixMult_tb/MM0/m_C[0]" type="array">
-         <obj_property name="ElementShortName">[0][0:2][7:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][0:2][7:0]</obj_property>
-         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-         <obj_property name="isExpanded"></obj_property>
-      </wvobject>
-      <wvobject fp_name="/matrixMult_tb/MM0/m_C[1]" type="array">
-         <obj_property name="ElementShortName">[1][0:2][7:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][0:2][7:0]</obj_property>
-         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-      <wvobject fp_name="/matrixMult_tb/MM0/m_C[2]" type="array">
-         <obj_property name="ElementShortName">[2][0:2][7:0]</obj_property>
-         <obj_property name="ObjectShortName">[2][0:2][7:0]</obj_property>
-         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="/matrixMult_tb/MM0/state" type="other">
-      <obj_property name="ElementShortName">state</obj_property>
-      <obj_property name="ObjectShortName">state</obj_property>
-      <obj_property name="CustomSignalColor">#008000</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/matrixMult_tb/MM0/i" type="other">
-      <obj_property name="ElementShortName">i</obj_property>
-      <obj_property name="ObjectShortName">i</obj_property>
-   </wvobject>
-   <wvobject fp_name="/matrixMult_tb/MM0/j" type="other">
-      <obj_property name="ElementShortName">j</obj_property>
-      <obj_property name="ObjectShortName">j</obj_property>
-   </wvobject>
-   <wvobject fp_name="/matrixMult_tb/MM0/k" type="other">
-      <obj_property name="ElementShortName">k</obj_property>
-      <obj_property name="ObjectShortName">k</obj_property>
    </wvobject>
 </wave_config>
